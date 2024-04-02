@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as go from 'gojs';
 // @ts-expect-error No package types
 import { GenogramLayout } from '../classes/GenogramLayout'
@@ -91,7 +90,6 @@ export function initDiagram() {
   );
   setupDiagram(myDiagram, familyData, 4);
 
-  // create and initialize the Diagram.model given an array of node data representing people
   function setupDiagram(diagram: go.Diagram, array: go.ObjectData[], focusId: number) {
     diagram.model = new go.GraphLinksModel({
       linkLabelKeysProperty: 'labelKeys',
@@ -139,6 +137,7 @@ export function initDiagram() {
           if (link === null) {
             const mlab = { s: 'LinkLabel' };
             model.addNodeData(mlab);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const mdata = { from: key, to: wife, labelKeys: [(mlab as any).key], category: 'Marriage' };
             (model as go.GraphLinksModel).addLinkData(mdata);
           }
@@ -158,6 +157,7 @@ export function initDiagram() {
           if (link === null) {
             const mlab = { s: 'LinkLabel' };
             model.addNodeData(mlab);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const mdata = { from: key, to: husband, labelKeys: [(mlab as any).key], category: 'Marriage' };
             (model as go.GraphLinksModel).addLinkData(mdata);
           }

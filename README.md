@@ -1,7 +1,8 @@
 # Family Tree
 
-Change `src/utils/familyData.ts` to update tree nodes.
+React compatible family tree component.
 
-Will look like the following:
+Change `src/utils/familyData.ts` to update tree nodes.
+Created using GoJS.
 
 ![Picture of diagram with mock data](/public/image.png?raw=true)
